@@ -1,16 +1,10 @@
-# simple_calculator
+# Simple_Calculator
 
-A new Flutter project.
+This is a simple calculator that performs mathematical operations like Addition, Subtraction, Multiplication, Division
 
-## Getting Started
+below are the screenshots and demo of the App
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<p float="left">
+  <img src="https://user-images.githubusercontent.com/52662002/146936185-3feaadca-189d-41de-a4fc-80e50a5df741.jpg" width="250" />
+  <video src='https://user-images.githubusercontent.com/52662002/147053768-a7ce1069-5f23-477a-98ab-4d573bd6c7ef.mp4' width=250/>
+</p>
