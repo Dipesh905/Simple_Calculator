@@ -29,6 +29,12 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
+  int result = 0;
+  var firstnumber = 0;
+  var secondnumber = 0;
+  TextEditingController _firstnumbercontroller = TextEditingController();
+  TextEditingController _secondnumbercontroller = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,6 +48,8 @@ class _HomepageState extends State<Homepage> {
           child: Column(
             children: [
               TextField(
+                keyboardType: TextInputType.number,
+                controller: _firstnumbercontroller,
                 decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     hintText: "Enter First Number"),
@@ -50,6 +58,8 @@ class _HomepageState extends State<Homepage> {
                 height: 10,
               ),
               TextField(
+                keyboardType: TextInputType.number,
+                controller: _secondnumbercontroller,
                 decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     hintText: "Enter Second Number"),
@@ -60,10 +70,50 @@ class _HomepageState extends State<Homepage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  ElevatedButton(onPressed: () {}, child: Text("Add")),
-                  ElevatedButton(onPressed: () {}, child: Text("Substract")),
-                  ElevatedButton(onPressed: () {}, child: Text("Multiply")),
-                  ElevatedButton(onPressed: () {}, child: Text("Division"))
+                  ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          firstnumber = int.parse(_firstnumbercontroller.text);
+                          secondnumber =
+                              int.parse(_secondnumbercontroller.text);
+
+                          result = (firstnumber + secondnumber);
+                        });
+                      },
+                      child: Text("Add")),
+                  ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          firstnumber = int.parse(_firstnumbercontroller.text);
+                          secondnumber =
+                              int.parse(_secondnumbercontroller.text);
+
+                          result = (firstnumber - secondnumber);
+                        });
+                      },
+                      child: Text("Substract")),
+                  ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          firstnumber = int.parse(_firstnumbercontroller.text);
+                          secondnumber =
+                              int.parse(_secondnumbercontroller.text);
+
+                          result = (firstnumber * secondnumber);
+                        });
+                      },
+                      child: Text("Multiply")),
+                  ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          firstnumber = int.parse(_firstnumbercontroller.text);
+                          secondnumber =
+                              int.parse(_secondnumbercontroller.text);
+
+                          result = (firstnumber ~/ secondnumber);
+                        });
+                      },
+                      child: Text("Division"))
                 ],
               ),
               SizedBox(
@@ -73,7 +123,7 @@ class _HomepageState extends State<Homepage> {
                 height: 40,
                 width: double.infinity,
                 color: Colors.yellow,
-                child: Center(child: Text("Result: ")),
+                child: Center(child: Text("Result: $result")),
               )
             ],
           ),
